@@ -6,7 +6,22 @@ function ItemList(props) {
         <div>
             {
                 props.items.map((item) => {
-                    return <Item key={item.id} {...item}  malzemeEkle={props.malzemeEkle}/>
+                    const icindeVarMi = props.selectedIngredients.find((ingredient) => {
+                        return ingredient.name === item.name;
+                    });
+                    const kacTaneVar = props.selectedIngredients.filter((ingredient) => {
+                      return ingredient.name === item.name;
+                    });
+
+                    return (
+                              <Item key = {item.id} {...item}
+                                malzemeEkle = {props.malzemeEkle}
+                                malzemeCikar = {props.malzemeCikar}
+                                butonGoster = {icindeVarMi}
+                                sayi = {kacTaneVar.length}
+                    />
+
+                  )
                 })
             }
         </div>

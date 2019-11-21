@@ -5,7 +5,7 @@ function Hamburger(props) {
         <div>
             <div className="BreadTop" style={{
                 height: "100px"
-            }}></div>
+            }}/>
             {
                 props.ingredients.length < 1 && <div style={{
                     textAlign: "center"
@@ -15,18 +15,19 @@ function Hamburger(props) {
             }
             {
                 props.ingredients.map((ingredient) => {
-                   return <div key={ingredient.id} style={{
+                   return <div key={ingredient.displayId} style={{
                        height: "20px",
                        backgroundColor: ingredient.color,
-                       width: "80%",
+                       width: "30%",
                        margin: "0 auto",
-                       marginTop: "10px"
+                       marginTop: "5px",
+                       borderRadius:"20px"
                    }}></div>
                 })
             }
             <div className="BreadBottom" style={{
                 height: "50px"
-            }}></div>
+            }}/>
         </div>
     );
 }

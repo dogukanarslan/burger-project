@@ -7,12 +7,18 @@ function Item(props) {
     return (
         <div className="BuildControl">
             <div className="Label">
-                {props.name}
+              {props.name}
+
             </div>
-            <button className="Less">Cıkar</button>
+            {props.sayi}
+            {
+                props.butonGoster ? <button className="Less" onClick={() => {
+                    props.malzemeCikar(props);
+                }}>Çıkar</button> : <button className="Less disabled">Çıkar</button>
+            }
             <button className="more" onClick={() => {
                 props.malzemeEkle(props);
-            }}>Ekle</button>
+            }}>Ekle {props.price}₺</button>
         </div>
     );
 }

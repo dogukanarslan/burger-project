@@ -16,7 +16,7 @@ const ingrediends = [
     },
     {
         id: 3,
-        name: "Kofte",
+        name: "Köfte",
         color: "black",
         price: 6
     },
